@@ -1,0 +1,5 @@
+#newImage {
+    max-width: 350;
+    max-height: 350;
+    transition: max-width 1s ease, max-height 1s ease;
+}

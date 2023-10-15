@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="top_3.png" alt="上半分の画像" id="topImage" width="175" height="175">
+        <img src="bottom_3.png" alt="下半分の画像" id="bottomImage" width="175" height="175">
+    </div>
+
+    <script>
+        const topImage = document.getElementById('topImage');
+        const bottomImage = document.getElementById('bottomImage');
+        let isClicked = false;
+
+        document.querySelector('.image-container').addEventListener('click', () => {
+            if (!isClicked) {
+                topImage.style.transform = 'translateY(-100%)';
+                bottomImage.style.transform = 'translateY(100%)';
+                topImage.style.opacity = 0;
+                bottomImage.style.opacity = 0;
+                topImage.addEventListener('transitionend', () => {
+                    topImage.style.transition = 'none';
+                    bottomImage.style.transition = 'none';
+                    topImage.classList.add('hidden');
+                    bottomImage.classList.add('hidden');
+
+                    // ページ遷移
+                    window.location.href = 'float.html';
+                }, { once: true });
+            }
+            isClicked = !isClicked;
+        });
+    </script>
+</body>
+
+</html>

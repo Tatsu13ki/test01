@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="top_1.png" alt="上半分の画像">
+        <img src="bottom_1.png" alt="下半分の画像">
+    </div>
+
+    <script>
+        const imageContainer = document.querySelector('.image-container');
+        let isClicked = false;
+
+        imageContainer.addEventListener('click', () => {
+            if (isClicked) {
+                imageContainer.style.flexDirection = 'column';
+            } else {
+                imageContainer.style.flexDirection = 'column-reverse';
+            }
+            isClicked = !isClicked;
+        });
+    </script>
+</body>
+</html>

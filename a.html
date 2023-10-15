@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* スタイルの追加 */
+        #popup-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        #popup-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+        }
+
+        #close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Tatsuki Web Site</h1>
+            <p>左右に移動して敵を避けるだけ！</p>
+        </header>
+
+        <main>
+            <!-- ゲームについての情報 -->
+            <section class="game-info">
+                <h2>About the Game</h2>
+                <div class="info-box">
+                    <ul>
+                        <li>３回当たるとゲームオーバー</li>
+                        <li>操作方法　　←：左へ　　→：右へ</li>
+                        <li>注）PCじゃないと動きません。いつかスマホにも実装します</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ゲームを始めるセクション -->
+            <section class="start-game">
+                <br><br>
+                <h2>Ready to Play?</h2>
+                <p>クリックしてね!</p>
+                <!-- スタートボタンをクリックしたときにポップアップを表示 -->
+                <div class="start-button-container">
+                    <button id="show-popup">HTMLコードを表示</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Tstsuki. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- ポップアップのコンテンツ -->
+    <div id="popup-container">
+        <div id="popup-content">
+            <!-- HTMLコードを表示 -->
+            <pre>
+                &lt;body&gt;
+                <div class="container">
+                    <header>
+                        <h1>Welcome to Tatsuki Web Site</h1>
+                        <p>左右に移動して敵を避けるだけ！</p>
+                    </header>
+            
+                    <main>
+                        <!-- ゲームについての情報 -->
+                        <section class="game-info">
+                            <h2>About the Game</h2>
+                            <div class="info-box">
+                                <ul>
+                                    <li>３回当たるとゲームオーバー</li>
+                                    <li>操作方法　　←：左へ　　→：右へ</li>
+                                    <li>注）PCじゃないと動きません。いつかスマホにも実装します</li>
+                                </ul>
+                            </div>
+                        </section>
+            
+                        <!-- ゲームを始めるセクション -->
+                        <section class="start-game">
+                            <br><br>
+                            <h2>Ready to Play?</h2>
+                            <p>クリックしてね!</p>
+                            <!-- スタートボタンをクリックしたときにポップアップを表示 -->
+                            <div class="start-button-container">
+                                <button id="show-popup">HTMLコードを表示</button>
+                            </div>
+                        </section>
+                    </main>
+F            
+                &lt;/body&gt;
+            </pre>
+            <div id="close-button">閉じる</div>
+        </div>
+    </div>
+
+    <script>
+        // ポップアップを表示するためのJavaScript
+        document.getElementById('show-popup').addEventListener('click', function () {
+            document.getElementById('popup-container').style.display = 'block';
+        });
+
+        // ポップアップを閉じるためのJavaScript
+        document.getElementById('close-button').addEventListener('click', function () {
+            document.getElementById('popup-container').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

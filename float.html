@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Dodging Game</title>
+    <style>
+        /* 全体のスタイル */
+        body {
+            background-color: #f2f2f2; /* 背景色を灰色に設定 */
+            color: #333; /* 文字色をダークグレーに設定 */
+            font-family: Arial, sans-serif; /* フォントをArialに設定 */
+            margin: 0; /* マージンをリセット */
+            padding: 0; /* パディングをリセット */
+            text-align: center; /* テキストを中央寄せ */
+        }
+
+        /* タイトルのスタイル */
+        h1 {
+            font-size: 32px;
+            margin-top: 20px;
+        }
+
+        /* コンテナのスタイル */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* ボタンのスタイル */
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+                /* ヘルスカウンターのスタイル */
+                #health-counter {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 影を追加 */
+        }
+
+        #health {
+            font-weight: bold;
+        }
+            /* 操作説明コンテナのスタイル */
+            .arrow-container {
+            border: 2px solid #007BFF; /* 枠のスタイルを追加 */
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Dodging Game</h1>
+        <div class="game-container">
+            <!-- プレイヤー画像 -->
+            <img id="player" src="girl_normal.png" alt="Player">
+            <img id="game-over" src="game-over.png" alt="Game Over" class="hidden">
+        </div>
+        <div class="status-container">
+            <!-- 矢印の画像を表示 -->
+            <button id="start-button">Start Game</button>
+            <br></br><br></br>
+            <div id="health-counter">Health: <span id="health">3</span></div>
+        </div>
+        <div class="arrow-container">
+            <p>操作説明</p>
+            <img src="at_left.png" alt="Left Arrow" class="arrow-image01">
+            <span class="arrow-text01">左へ</span>
+            <img src="at_right.png" alt="Right Arrow" class="arrow-image01">
+            <span class="arrow-text01">右へ</span>
+        </div>
+        <!-- 戻るボタン -->
+        <br><button id="back-button">ホームへ戻る</button>
+        <script src="script.js"></script> <!-- script.js を読み込む -->
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Tstsuki. All rights reserved.</p>
+    </footer>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <h1>Welcome to Tatsuki Web Site</h1>
+            <p>左右に移動して敵を避けるだけ！</p>
+            <h2>３回当たるとゲームオーバー</h2>
+            <p>操作方法　　←：左へ　　→：右へ</p>
+            <p>注）PCじゃないと動きません。いつかスマホにも実装します</p>
+        </div>
+    </div>    
+
+</body>
+</html>
